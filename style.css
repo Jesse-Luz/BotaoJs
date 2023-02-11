@@ -1,0 +1,99 @@
+:root {
+    --padrao-color: #202020;
+}
+
+*{
+    color: var(--padrao-color);
+    text-decoration: none;
+    font-family: "Century Gothic", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border: 1px solid #202020;
+    height: 100%;
+    width: 100%;
+    background-image: url(//www.devmedia.com.br/view/img/grid-light.png?2);
+}
+
+main {
+    height: 100%;
+    max-width: 90%;
+    margin: auto;
+}
+
+header h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1.5em, 1em + 3vw, 2.5em);
+    text-align: center;
+    animation: animacao 3s linear infinite ;
+    margin: 0 10% 0 10%;
+}
+
+@keyframes animacao {
+    0% {
+        transform: translate(-20%);
+    }
+
+    50% {
+        transform: translate(20%);
+    }
+
+    100% {
+        transform: translate(-20%);
+    }
+}
+
+section {
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.button-block {
+    border: 1px solid var(--padrao-color);
+    background-color: #f1f1f1;
+    display: inline-block;
+    padding: 12px;
+    width: 32.73%;
+    min-width: 30%;
+    height: 46.7vh;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    main {
+        width: 90%;
+        height: auto;
+    }
+    section {
+        justify-content: space;
+    }
+    .button-block {
+        min-height: 40vh;
+        min-width: 49%;
+    }
+}
+
+@media (max-width: 767px) {
+    main {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .button-block {
+        min-width: 100%;
+        min-height: 40vh;
+    }
+}
