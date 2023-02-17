@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
 :root {
     --padrao-color: #202020;
+    --letters-lights: #f1f1f1;
 }
 
 *{
-    color: var(--padrao-color);
     text-decoration: none;
-    font-family: "Century Gothic", sans-serif;
+    list-style: none;
+    font-family: 'Inconsolata', monospace;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -24,76 +27,491 @@ main {
     margin: auto;
 }
 
-header h1{
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: clamp(1.5em, 1em + 3vw, 2.5em);
-    text-align: center;
-    animation: animacao 3s linear infinite ;
-    margin: 0 10% 0 10%;
-}
-
-@keyframes animacao {
-    0% {
-        transform: translate(-20%);
-    }
-
-    50% {
-        transform: translate(20%);
-    }
-
-    100% {
-        transform: translate(-20%);
-    }
-}
-
 section {
     height: 100%;
-    background-color: aqua;
+    padding: 1% 0 2% 0;
     display: flex;
     flex-wrap: wrap;
     gap: 1vh;
     flex-direction: row;
     align-content: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+/* Area Header */
+ 
+header {
+    height: 40px;
+    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 1vh;
+}
+
+.titulo {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+/* Area Header */
+
+/* Animated border */
+
+.top-right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: Largura, Altura ease-in-out ;
+    animation-fill-mode: forwards;
+    animation-duration: 1s, 1s;
+    animation-delay: 1s, 2s;
+    border-top: 1.5px solid#8854d0;
+    border-right: 1.5px solid #8854d0;
+    background: transparent;
+    z-index: -1;
+}
+
+.bot-left {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: Largura, Altura ease-in-out ;
+    animation-fill-mode: forwards; 
+    animation-delay: 3.15s, 4.25s;
+    animation-duration: 1s, 1s;
+    border-left: 1.5px solid #8854d0;
+    border-bottom: 1.5px solid #8854d0 ;
+    z-index: -1;
+}
+
+@keyframes Largura {
+    from {
+        width: 0%;
+        z-index: 1;
+
+    }
+    to {
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+@keyframes Altura {
+    from {
+        height: 0%;
+        z-index: 1;
+    }
+
+    to {
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+/* Final - Animated border */
+
+/* Button block */
+
+.border {
+    width: 30%;
+    height: 44vh;
 }
 
 .button-block {
-    border: 1px solid var(--padrao-color);
-    background-color: #f1f1f1;
-    display: inline-block;
-    padding: 12px;
-    width: 32.73%;
-    min-width: 30%;
-    height: 46.7vh;
+    background: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    min-width: 90%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 2% 3% 2% 3%;
 }
 
+.button-area {
+    z-index: 2;
+    width: 100%;
+    height: 86%;
+    position: relative;
+    display: flex;
+    gap: 2vh;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.button-block p {
+    font-size: 160%;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    z-index: 3;
+    position: relative;
+    margin-bottom: 3%;
+}
+
+/* Final - Button block */
+
+/* Buttons style */
+
+.b-1 {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 20%;
+    min-height: 10%;
+}
+
+#btLight {
+    background: #ededed;
+}
+
+#btGray {
+    background: gray;
+}
+
+#btDark {
+    background-color: #263238;
+}
+
+#btLD {
+    background-image: linear-gradient(to right, #ededed, gray, #263238);
+}
+
+#btRed {
+    background: red;
+}
+
+#btOrange {
+    background: orange;
+}
+
+#btYellow {
+    background: yellow;
+}
+
+#btRY {
+    background-image: linear-gradient(to right, red, orange, yellow);
+}
+
+#btGreen {
+    background: greenyellow;
+}
+
+#btAquaGreen {
+    background: rgb(0, 255, 128);
+}
+
+#btCyan {
+    background: cyan;
+}
+
+#btGC {
+    background-image: linear-gradient(to right, greenyellow, rgb(0, 255, 128), cyan);
+}
+
+#btTurquoise {
+    background: turquoise;
+}
+
+#btBlue {
+    background: #3867d6;
+}
+
+#btRoxao {
+    background: rgb(64, 0, 255);
+}
+
+#btTR {
+    background-image: linear-gradient(to right, turquoise, #3867d6, rgb(64, 0, 255) ) ; 
+}
+
+#btPurple {
+    background: #8854d0;
+}
+
+#btPink {
+    background: #f1f;
+}
+
+#btMagenta {
+    background: rgb(255, 0, 136);
+}
+
+#btPM {
+    background-image: linear-gradient(to right, #8854d0, #f1f, rgb(255, 0, 136));
+}
+
+/* Final - Buttons style */
+
+/* button colors js */
+
+.light{
+    background: #f1f1f1;
+    color: rgb(0, 0, 0);
+    transition: 0.5s ease-in-out;
+}
+
+.gray {
+    background: gray;
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.dark {
+    background: #202020;
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.l-d {
+    background-image: linear-gradient(to right, #ededed, gray, #263238);
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+    animation: gradient 8s ease infinite;
+    background-size: 400% 400%;
+}
+
+.red {
+    background: red;
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.orange {
+    background: orange;
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.yellow {
+    background: yellow;
+    color: #202020;
+    transition: 0.5s ease-in-out;
+}
+
+.r-y {
+    background-image: linear-gradient(to right, red, orange, yellow) ;
+    color: var(--letters-lights);
+    transition: 0.5s all;  
+    animation: gradient 8s ease infinite;
+    background-size: 400% 400%;
+}
+
+.green {
+    background: greenyellow;
+    color: #202020;
+    transition: 0.5s ease-in-out;
+}
+
+.aquagreen {
+    background: rgb(0, 255, 128);
+    color: #202020;
+    transition: 0.5s ease-in-out;
+}
+
+.cyan {
+    background: cyan;
+    color: #202020;
+    transition: 0.5s ease-in-out;
+}
+
+.g-c {
+    background-image: linear-gradient(to right, greenyellow, rgb(0, 255, 128), cyan);
+    color: #202020;
+    transition: 0.5s ease-in-out;
+    animation: gradient 8s ease infinite;
+    background-size: 400% 400%;
+}
+
+.turquoise {
+    background: turquoise;
+    color: #202020;
+    transition: 0.5s ease-in-out;
+}
+
+.blue {
+    background: #3867d6;
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.roxao {
+    background: rgb(64, 0, 255);
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.t-r {
+    background-image: linear-gradient(to right, turquoise, #3867d6, rgb(64, 0, 255) ) ;
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+    animation: gradient 8s ease infinite;
+    background-size: 400% 400%;
+}
+
+.purple {
+    background: #8854d0;
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.pink {
+    background: #f1f;
+    color: #202020;
+    transition: 0.5s ease-in-out;
+}
+
+.magenta {
+    background: rgb(255, 0, 136);
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+}
+
+.p-m {
+    background-image: linear-gradient(to right, #8854d0, #f1f, rgb(255, 0, 136));
+    color: var(--letters-lights);
+    transition: 0.5s ease-in-out;
+    animation: gradient 8s ease infinite;
+    background-size: 400% 400%;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Final - Button colors js */
+
+/* Calculator- */
+
+.calcArea {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.calcOrImc {
+
+    height: 60%;
+    min-width: 50%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20%;
+}
+
+.calcOrImc button {
+    width: 100%;
+    height: 40%;
+    font-size: 150%;
+    padding: 5%;
+
+}
+
+.calc {
+    position: absolute;
+    width: 95%;
+    height: 96%;
+    padding: 1%;
+    background: #8854d0;
+    transform: scale(0);
+}
+
+.calcImc {
+    position: absolute;
+    width: 95%;
+    height: 96%;
+    padding: 1%;
+    background: #f1f;
+    transform: scale(0);
+}
+
+.areaShortCurt {
+    width: 98%;
+    height: 10%;
+    display: flex;
+    gap: 20%;
+    position: absolute;
+}
+
+.btnShortCurt {
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.abrirCalc {
+    animation-duration: 200ms;
+    animation-name: scale1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.fecharCalc {
+    animation-duration: 200ms;
+    animation-name: scale0;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scale1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale0 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+/* Calculator-- */
+
+
 @media (min-width: 768px) and (max-width: 1200px) {
-    main {
-        width: 90%;
-        height: auto;
-    }
-    section {
-        justify-content: space;
-    }
-    .button-block {
+
+    .border {
         min-height: 40vh;
         min-width: 49%;
     }
+
 }
-
 @media (max-width: 767px) {
-    main {
+    
+    header {
+        font-size: 100%;
+        height: 100%;
+        white-space: nowrap;
+    }
+
+    .border {
+        height: 41vh;
         width: 100%;
-        height: auto;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    .button-block {
-        min-width: 100%;
-        min-height: 40vh;
     }
 }
