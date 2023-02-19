@@ -166,50 +166,103 @@ function pm() {
 
 // Background Color--
 
-// Calculator-
-    
+// Calculator area-
+
     let calc = document.querySelector('#calcJs')
     let calcImc = document.querySelector('#calcImcJs')
-    let btnCalc = document.querySelector('#btCalc')
-    let btnCalcImc = document.querySelector('#btCalcImc')
-    let voltar = document.querySelector('#calcBack')
-    let voltarImc = document.querySelector('#calcBackImc')
-    let escolha = document.querySelector('#escolha1')
 
-    btnCalc.addEventListener('click', abrirCalc)
-    btnCalcImc.addEventListener('click', abrirCalcImc)
-    voltar.addEventListener('click', voltei)
-    voltarImc.addEventListener('click', volteiImc)
+    // Calculator-
+        let result = document.querySelector('#resultjs').innerHTML
+        
+        function insertCalc(num) {
+            let numberCalc = document.querySelector('#resultjs').innerHTML
+            document.querySelector('#resultjs').innerHTML = numberCalc + num
+        }
 
-     function abrirCalc() {
-         console.log('Calculadora aberta')
-         calc.classList.add('abrirCalc')
-         calc.classList.remove('fecharCalc')
-         escolha.classList.add('fecharCalc')
-     }
+        function clean() {
+            document.querySelector('#resultjs').innerHTML = ""
+        }
 
-    function abrirCalcImc() {
-        console.log('Calculadora IMC aberta')
-        calcImc.classList.add('abrirCalc')
-        calcImc.classList.remove('fecharCalc')
-        escolha.classList.add('fecharCalc')
-    }
+        function back() {
+            result = document.querySelector('#resultjs').innerHTML
+            document.querySelector('#resultjs').innerHTML = result.substring(0, result.length -1)
+        }
 
-    function voltei() {
-        console.log('voltei')
-        calc.classList.add('fecharCalc')
-        escolha.classList.add('abrirCalc')
-        escolha.classList.remove('fecharCalc')
-    }
+        function calcular() {
+            result = document.querySelector('#resultjs').innerHTML
+            if(result){
+                document.querySelector('#resultjs').innerHTML = eval(result)
+            }
+            else {
+                document.querySelector('#resultjs').innerHTML = ""
+            }
+        }
+    
+    // Calculator--
 
-    function volteiImc() {
-        console.log('voltei do Imc')
-        calcImc.classList.add('fecharCalc')
-        escolha.classList.add('abrirCalc')
-        escolha.classList.remove('fecharCalc')
-    }
 
-// Calculator--
+    // Painel Calculadora-
+        let btnCalc = document.querySelector('#btCalc')
+        let btnCalcImc = document.querySelector('#btCalcImc')
+        let voltar = document.querySelector('#calcBack')
+        let voltarImc = document.querySelector('#calcBackImc')
+        let escolha = document.querySelector('#escolha1')
+        let goImc = document.querySelector('#skipImc')
+        let goCalc = document.querySelector('#skipCalc')
+
+        btnCalc.addEventListener('click', abrirCalc)
+        btnCalcImc.addEventListener('click', abrirCalcImc)
+        voltar.addEventListener('click', voltei)
+        voltarImc.addEventListener('click', volteiImc)
+        goImc.addEventListener('click', shortcutImc)
+        goCalc.addEventListener('click', shortcutCalc)
+
+        function abrirCalc() {
+            console.log('Calculadora aberta')
+            calc.classList.add('abrirCalc')
+            calc.classList.remove('fecharCalc')
+            escolha.classList.add('fecharCalc')
+        }
+
+        function abrirCalcImc() {
+            console.log('Calculadora IMC aberta')
+            calcImc.classList.add('abrirCalc')
+            calcImc.classList.remove('fecharCalc')
+            escolha.classList.add('fecharCalc')
+        }
+
+        function voltei() {
+            console.log('voltei')
+            calc.classList.add('fecharCalc')
+            escolha.classList.add('abrirCalc')
+            escolha.classList.remove('fecharCalc')
+        }
+
+        function volteiImc() {
+            console.log('voltei do Imc')
+            calcImc.classList.add('fecharCalc')
+            escolha.classList.add('abrirCalc')
+            escolha.classList.remove('fecharCalc')
+        }
+
+        function shortcutCalc() {
+            console.log('Usou atalho para calculadora')
+            calcImc.classList.remove('abrirCalc')
+            calcImc.classList.add('fecharCalc')
+            calc.classList.add('abrirCalc')
+            calc.classList.remove('fecharCalc')
+        }
+
+        function shortcutImc() {
+            console.log('usou atalho para calculadora IMC')
+            calc.classList.add('fecharCalc')
+            calc.classList.remove('abrirCalc')
+            calcImc.classList.add('abrirCalc')
+            calcImc.classList.remove('fecharCalc')
+        }       
+    // Painel Calculadora-
+
+// Calculator area--
 
 
 

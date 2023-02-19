@@ -131,7 +131,7 @@ header {
     display: flex;
     align-content: center;
     justify-content: center;
-    padding: 2% 3% 2% 3%;
+    padding: 2%;
 }
 
 .button-area {
@@ -146,14 +146,14 @@ header {
     justify-content: center;
 }
 
-.button-block p {
+.backgroundP {
     font-size: 160%;
     text-align: center;
     width: 100%;
     text-transform: uppercase;
     z-index: 3;
     position: relative;
-    margin-bottom: 3%;
+    margin: 1%;
 }
 
 /* Final - Button block */
@@ -408,8 +408,7 @@ header {
     align-items: center;
 }
 
-.calcOrImc {
-
+.calcEImc {
     height: 60%;
     min-width: 50%;
     display: flex;
@@ -418,12 +417,21 @@ header {
     gap: 20%;
 }
 
-.calcOrImc button {
+.calcEImc button {
     width: 100%;
     height: 40%;
     font-size: 150%;
     padding: 5%;
+    color: #fff;
+    background: #242424;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
 
+.calcEImc button:hover {
+    background: #363636;
+    transform: scale(1.1);
 }
 
 .calc {
@@ -431,7 +439,6 @@ header {
     width: 95%;
     height: 96%;
     padding: 1%;
-    background: #8854d0;
     transform: scale(0);
 }
 
@@ -444,16 +451,29 @@ header {
     transform: scale(0);
 }
 
-.areaShortCurt {
-    width: 98%;
-    height: 10%;
+.areaShortCut {
+    width: 100%;
+    height: 7%;
     display: flex;
     gap: 20%;
-    position: absolute;
+    margin-bottom: 4%;
 }
 
-.btnShortCurt {
-    width: 40%;
+.areaShortCut button {
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 120%;
+    font-weight: 700;
+    border: 1px solid #202020;
+    color: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnShortCut {
+    width: 60%;
     height: 100%;
     cursor: pointer;
     z-index: 4;
@@ -467,10 +487,100 @@ header {
 }
 
 .fecharCalc {
-    animation-duration: 200ms;
+    animation-duration: 50ms;
     animation-name: scale0;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
+}
+
+.calculator {
+    width: 90%;
+    height: 86%;
+    margin: auto;
+}
+
+::selection {
+    background: #6704c3; color: #fff;
+}
+
+.resultado {
+    width: 100%;
+    height: 15%;
+    font-size: 150%;
+    padding: 2%;
+    margin-bottom: 0%;
+    border-radius: 10px;
+    border: none ;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background: #343434;
+    color: white;
+}
+
+.tableCalc {
+    width: 100%;
+    height: 83%;
+    margin-top: 2%;
+    border-radius: 10px;
+    display: flex;
+    user-select: none;
+}
+
+.tableCalc button {
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableCalc button img {
+    width: 29px;
+}
+
+.tableCalc button:hover {
+    background-color: #404040;
+}
+
+.numCalc {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2%;
+}
+
+.numCalc button {
+    height: 24%;
+    width: 32%;
+    background: #242424;
+
+}
+
+.opCalc {
+    height: 99%;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5%;
+}
+
+.opCalc button {
+    height: 24%;
+    width: 49%;
+    background: #343434;
+}
+
+#btResult {
+background: #5006b7;
+}
+
+#paren {
+    width: 24%;
 }
 
 @keyframes scale1 {
@@ -501,6 +611,10 @@ header {
         min-width: 49%;
     }
 
+    .areaShortCut {
+        font-size: 13px;
+    }
+
 }
 @media (max-width: 767px) {
     
@@ -513,5 +627,10 @@ header {
     .border {
         height: 41vh;
         width: 100%;
+    }
+
+    .areaShortCut button{
+        font-size: 14px;
+        padding: 1px;
     }
 }

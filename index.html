@@ -19,7 +19,7 @@
                 <article class="button-block" id="a1">
                     <div class="top-right"></div>
                     <div class="bot-left"></div>
-                    <p>Alterar Background</p>
+                    <p class="backgroundP">Alterar Background</p>
                     <div class="button-area">
                         <button class="b-1" id="btLight"></button>
                         <button class="b-1" id="btGray"></button>
@@ -48,22 +48,54 @@
                 <article class="button-block" id="a1">
                     <div class="top-right"></div>
                     <div class="calcArea">
-                        <div class="calcOrImc" id="escolha1">
+                        <div class="calcEImc" id="escolha1">
                             <button id="btCalc">Calculadora</button>
                             <button id="btCalcImc">Calculadora IMC</button>
                         </div>
 
                         <div class="calc" id="calcJs">
-                            <div class="areaShortCurt">
-                                <button class="btnShortCurt" id="calcBack">Voltar</button>
-                                <button class="btnShortCurt" id="skipImc">Imc</button>
+                            <div class="areaShortCut">
+                                <button class="btnShortCut" id="calcBack">< Voltar</button>
+                                <button class="btnShortCut" id="skipImc">Imc ></button>
+                            </div>
+
+                            <div class="calculator">
+                                <p class="resultado" id="resultjs"></p>
+                                <div class="tableCalc">
+                                    <div class="numCalc">
+                                        <button onclick="insertCalc('7')">7</button>
+                                        <button onclick="insertCalc('8')">8</button>
+                                        <button onclick="insertCalc('9')">9</button>
+                                        <button onclick="insertCalc('4')">4</button>
+                                        <button onclick="insertCalc('5')">5</button>
+                                        <button onclick="insertCalc('6')">6</button>
+                                        <button onclick="insertCalc('1')">1</button>
+                                        <button onclick="insertCalc('2')">2</button>
+                                        <button onclick="insertCalc('3')">3</button>
+                                        <button onclick="insertCalc('0')">0</button>
+                                        <button onclick="insertCalc('.')">.</button>
+                                        <button onclick="back()"><img src="./img/backspace (2).png"></button>
+                                    </div>
+                                    <div class="opCalc">
+                                        <button onclick="insertCalc(' / ')">÷</button>
+                                        <button onclick="clean()">AC</button>
+                                        <button onclick="insertCalc(' * ')">X</button>
+                                        <button id="paren" onclick="insertCalc('(')">(</button>
+                                        <button id="paren" onclick="insertCalc(')')">)</button>
+                                        <button onclick="insertCalc(' - ')">-</button>
+                                        <button onclick="insertCalc(' % ')">%</button>
+                                        <button onclick="insertCalc(' + ')">+</button>
+                                        <button id="btResult" onclick="calcular()">=</button>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
                         <div class="calcImc" id="calcImcJs">
-                            <div class="areaShortCurt">
-                                <button class="btnShortCurt" id="calcBackImc">Voltar</button>
-                                <button class="btnShortCurt" id="skipImc">Calculadora</button>
+                            <div class="areaShortCut">
+                                <button class="btnShortCut" id="calcBackImc">< Voltar</button>
+                                <button class="btnShortCut" id="skipCalc">Calculadora ></button>
                             </div>
                         </div>
                     </div>
