@@ -128,10 +128,10 @@ header {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    display: flex;
     align-content: center;
     justify-content: center;
     padding: 2%;
+    gap: 3%;
 }
 
 .button-area {
@@ -142,7 +142,6 @@ header {
     display: flex;
     gap: 2vh;
     flex-wrap: wrap;
-    display: flex;
     justify-content: center;
 }
 
@@ -152,8 +151,6 @@ header {
     width: 100%;
     text-transform: uppercase;
     z-index: 3;
-    position: relative;
-    margin: 1%;
 }
 
 /* Final - Button block */
@@ -503,20 +500,27 @@ header {
     background: #6704c3; color: #fff;
 }
 
-.resultado {
-    width: 100%;
+.blockResult {
     height: 15%;
-    font-size: 150%;
-    padding: 2%;
-    margin-bottom: 0%;
+    width: 100%;
+    padding: 2% 4% 2% 4%;
     border-radius: 10px;
     border: none ;
-    position: relative;
     display: flex;
-    justify-content: end;
-    align-items: center;
+    flex-wrap: nowrap;
     background: #343434;
     color: white;
+}
+
+.resultado {
+    width: 100%;
+    height: 100%;
+    font-size: 150%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: end;
 }
 
 .tableCalc {
